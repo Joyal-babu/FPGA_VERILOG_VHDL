@@ -1,4 +1,4 @@
-#FREQUENCY GENERATOR 
+# FREQUENCY GENERATOR  <br>  
 Design HDL code will create frequencies of 100 Hz, 50 Hz, 10 Hz and  1 Hz.<br>
 system clock is at 100 MHz.
 
