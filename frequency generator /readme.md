@@ -2,12 +2,12 @@
 Design HDL code will create frequencies of 100 Hz, 50 Hz, 10 Hz and  1 Hz.<br>
 system clock is at 100 MHz.
 
-###  Constants to create the frequencies needed:
-  -- Formula is: ( (SYSTEM CLOCK FREQ. / REQUIRED FREQ.) * 50% duty cycle)
-  -- So for 100 Hz: 100,000,000 / 100 * 0.5 = 500000
-  -- So for 50  Hz: 100,000,000 / 50  * 0.5 = 1000000
-  -- So for 10  Hz: 100,000,000 / 10  * 0.5 = 5000000
-  -- So for 1   Hz: 100,000,000 / 1   * 0.5 = 50000000
+###  Constants to create the frequencies needed:<br>
+  -- Formula is: ( (SYSTEM CLOCK FREQ. / REQUIRED FREQ.) * 50% duty cycle) <br>   
+  -- So for 100 Hz: 100,000,000 / 100 * 0.5 = 500000 <br>
+  -- So for 50  Hz: 100,000,000 / 50  * 0.5 = 1000000 <br>
+  -- So for 10  Hz: 100,000,000 / 10  * 0.5 = 5000000 <br>
+  -- So for 1   Hz: 100,000,000 / 1   * 0.5 = 50000000 <br>
 
 
 
