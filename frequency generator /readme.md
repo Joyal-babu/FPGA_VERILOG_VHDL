@@ -1,3 +1,10 @@
+#FREQUENCY GENERATOR 
+Design HDL code will create frequencies of 100 Hz, 50 Hz, 10 Hz and  1 Hz.<br>
+system clock is at 100 MHz.
+
+
+
+
 >FREQUENCY 100 HZ
 ![100HZ](https://github.com/Joyal-babu/FPGA_VERILOG_VHDL/assets/123290522/407f0c12-957b-4fc5-9cc3-73319f626c7f)
 
