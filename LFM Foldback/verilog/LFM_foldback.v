@@ -22,7 +22,7 @@
 
 module LFM_foldback
     #(
-     parameter length = 100,
+     parameter length = 100,          // enter the number of samples required for each frequency
      parameter phase  = 32'h28F5C29
      )
      
