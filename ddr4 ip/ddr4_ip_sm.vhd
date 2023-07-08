@@ -8,11 +8,9 @@ entity ddr4_ip_sm is
           sys_clk_n : in std_logic;
           ui_clk_in : in std_logic;
           reset     : in std_logic  );
+end ddr4_ip_sm;
           
-architecture behaviour of ddr4_ip_sm is
-
-component 
-end component;
+architecture Behavioral of ddr4_ip_sm is
 
 constant data_width : natural := 128;
 constant data_depth : natural := 100;
@@ -121,7 +119,7 @@ signal ddr4_data : ext_data := ( x"1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F",
                                  x"76354675ED63546BBD7876453BBA8757"  );
                                  
 signal app_hi_pri     : std_logic :='0';
-signal ddr4_addr      : std_logiv_vector(16 downto 0);
+signal ddr4_addr      : std_logic_vector(16 downto 0);
 signal calib_complete : std_logic;
 signal ddr4_ba        : std_logic_vector(1 downto 0);
 signal ddr4_cke       : std_logic_vector(0 downto 0);
@@ -159,7 +157,7 @@ signal state, next_state : state_type;
 
 begin
 
-process(ui_clk_in) then
+process(ui_clk_in)
 begin
 	if(rising_edge(ui_clk_in)) then
     	if(reset = '1') then
@@ -168,6 +166,7 @@ begin
         	state <= next_state;
         end if;
     end if;
+end process;
     
 process(state, ui_clk_in)
 begin
@@ -205,3 +204,46 @@ begin
                     	arr_index <= arr_index + 1;
                         if(ddr4_app_rdy = '1' and ddr4_app_wdf_rdy = '1') then
                         	app_wdf_data <= ddr4_data(to_integer(unsigned(arr_index)));
+                        	app_addr     <= app_addr + 8;
+                        else 
+                            app_wdf_data <= app_wdf_data;
+                            app_addr     <= app_addr;
+                        end if;
+                    else
+                        arr_index <= arr_index;
+                    end if;
+               elsif(cntr_1 = 100) then
+                    app_wdf_wren <= '0';
+                    app_wdf_end  <= '0';
+                    arr_index    <= arr_index;
+                    app_addr     <= (others => '0');
+                    next_state   <=  st4_read;   
+               end if;
+          end if;
+          
+        when st4_read =>
+            if(rising_edge(ui_clk_in)) then
+                cntr_1 <= cntr_1 + 1;
+                app_cmd <= "001";
+                if(ddr4_app_rdy = '1') then
+                    app_addr <= app_addr + 8;
+                else
+                    app_addr <= app_addr;
+                end if;
+                if(cntr_1 = 300) then
+                    app_en <= '0';
+                    next_state <= st5_hold;
+                end if;
+            end if;
+            
+       when st5_hold =>
+            if(rising_edge(ui_clk_in)) then
+                cntr_1 <= cntr_1 + 1;
+                if(cntr_1 = 500) then
+                    next_state <= st1_reset;
+                end if;
+            end if;
+    end case;
+ end process;
+ 
+end Behavioral;
