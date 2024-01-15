@@ -34,6 +34,9 @@ use IEEE.std_logic_unsigned.all;
 --use UNISIM.VComponents.all;
 
 entity single_port_ram is
+    generic ( 
+            data_width : natural := 16;
+            ram_depth   : natural := 1024 );
     Port (
         clock      : in  STD_LOGIC;
         reset      : in  STD_LOGIC;
@@ -46,8 +49,8 @@ end single_port_ram;
 
 architecture Behavioral of single_port_ram is
 
-    constant data_width : natural := 16;
-    constant ram_depth  : natural := 1024;
+    -- constant data_width : natural := 16;
+    -- constant ram_depth  : natural := 1024;
 
     type ar_mem is array (0 downto (ram_depth-1)) of std_logic_vector((data_width-1) downto 0);
     signal sp_ram : ar_mem;
