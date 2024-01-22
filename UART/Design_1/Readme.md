@@ -14,7 +14,7 @@ The number of bits transmitted per second is frequently referred to as the baud 
 
 
  BAUD_RATE_SELECT  |  BAUD_RATE X 8  |  BAUD_RATE  |
-
+`---------------------------------------------------`
      0             |    1843200      |   230400    |
      1             |    921600       |   115200    |
      2             |    460800       |   57600     |
