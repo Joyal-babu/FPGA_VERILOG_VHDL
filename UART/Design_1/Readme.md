@@ -12,9 +12,9 @@ Many UART performs multiple sample points to detect a bit cell and decide on a m
 
 The number of bits transmitted per second is frequently referred to as the baud rate. The proposed baud rate generator can provide standard RS-232C baud rate clocks such as **230400, 115200, 57600, 38400, 28800, 19200, 9600, 4800, 2400, 1800, 1200, 600, 300** ans 8 times the data rate clock for single bit detection sampling in receiver module. One can select the required baud rate by assigning different values from the table to "baud_rate_select" in generic section.
 
-------------------------------------------------------
+
 -- BAUD_RATE_SELECT  |  BAUD_RATE X 8  |  BAUD_RATE  |
-------------------------------------------------------
+
 --     0             |    1843200      |   230400    |
 --     1             |    921600       |   115200    |
 --     2             |    460800       |   57600     |
