@@ -1,1 +1,3 @@
-## UART - Universal Asynchronous Receiver and Transmitter
+# UART - Universal Asynchronous Receiver and Transmitter
+
+`intro`
