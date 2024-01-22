@@ -32,6 +32,10 @@ ____________________________________________________
 |___________________|_________________|_____________|
 ~~~
 
+### TRANSMITTER MODULE
+
+The transmitter circuitry converts a parallel data word into serial form and appends the start and stop bits.
+
 
 
 
