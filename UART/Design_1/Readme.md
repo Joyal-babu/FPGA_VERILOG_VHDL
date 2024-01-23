@@ -6,7 +6,9 @@ The UART contains a receiver (serial to parallel converter) and a transmitter (p
 
 The UART frame consists of 1 start bit, a number of data bits, an optional parity bit and 1 or 2 stop bits. The start bit goes **_low_** for one bit time, then a number of data bits are transmitted,**_least significant bit first_** and stop bit goes **_high_** for one or two bit time. When no data is being transmitted, a logic 1 must be placed in the transmitted data line. The number of data bits, the parity bit and the number of stop bits must be set as a priori in all communication partners.  
 
-Many UART performs multiple sample points to detect a bit cell and decide on a major vote. This bit affords a multiple of the sampling frequency for single bit detection but provides immunity to short spike disturbances on the communication line.
+Many UART performs multiple sample points to detect a bit cell and decide on a major vote. This method affords a multiple of the sampling frequency for single bit detection but provides immunity to short spike disturbances on the communication line.
+
+>Simulation result with Tx_out loopbacked to RX_in
 
 ![Simulation result with Tx_out loopbacked to RX_in](https://github.com/Joyal-babu/FPGA_VERILOG_VHDL/assets/123290522/bdea56c3-30af-4058-8c7b-18b1607221c1)
 
@@ -35,9 +37,20 @@ ____________________________________________________
 |___________________|_________________|_____________|
 ~~~
 
+
 ### TRANSMITTER MODULE
 
 The transmitter circuitry converts a parallel data word into serial form and appends the start and stop bits.
+
+
+
+
+
+
+
+
+
+
 
 
 
