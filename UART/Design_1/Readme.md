@@ -37,6 +37,11 @@ ____________________________________________________
 |___________________|_________________|_____________|
 ~~~
 
+>Baud rate generator simulation result
+
+![Screenshot (40)](https://github.com/Joyal-babu/FPGA_VERILOG_VHDL/assets/123290522/4b723bc2-91ae-4a3d-9e23-6e0f6103724c)
+
+
 
 ### TRANSMITTER MODULE
 
@@ -52,6 +57,14 @@ The transmitter circuitry converts a parallel data word into serial form and app
 
 The task of receiver is to receive a serial bit sream in the form: start bits, data, stop bits and store the contained data. To avoid setup and hold time problems and reading some bits at the wrong time, the data is sampled 8 times during each bit time ie sampled on the rising edge of baud_clkx8.
 when Rx_in first goes to 0, wait 4 more baud_clkx8 clocks to reach middle of the start bit.Then wait 8 more clock cycles to reach the middle of first data bit, read the data and continue reading at every 8 baud_clkx8 clock until reading the stop bit.After receiving one data **_one_data_recvd_** signal is made HIGH for 7 clock cycles.
+
+
+
+> ELABORATED DESIGN
+
+   ![Screenshot (35)](https://github.com/Joyal-babu/FPGA_VERILOG_VHDL/assets/123290522/9e9149d8-28d2-40c3-a6c4-f436117f5f28)
+
+
 
 
 
