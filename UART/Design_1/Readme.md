@@ -8,6 +8,9 @@ The UART frame consists of 1 start bit, a number of data bits, an optional parit
 
 Many UART performs multiple sample points to detect a bit cell and decide on a major vote. This bit affords a multiple of the sampling frequency for single bit detection but provides immunity to short spike disturbances on the communication line.
 
+![Simulation result with Tx_out loopbacked to RX_in](https://github.com/Joyal-babu/FPGA_VERILOG_VHDL/assets/123290522/bdea56c3-30af-4058-8c7b-18b1607221c1)
+
+
 ### BAUD RATE GENERATOR
 
 The number of bits transmitted per second is frequently referred to as the baud rate. The proposed baud rate generator can provide standard RS-232C baud rate clocks such as **230400, 115200, 57600, 38400, 28800, 19200, 9600, 4800, 2400, 1800, 1200, 600, 300** ans 8 times the data rate clock for single bit detection sampling in receiver module. One can select the required baud rate by assigning different values from the table to "baud_rate_select" in generic section.
